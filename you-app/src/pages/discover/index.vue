@@ -1,5 +1,5 @@
 <template>
-     <div class="page" id="discover">
+     <div class="discover" id="app">
         <h1>发现</h1>
     </div>
 </template>
@@ -10,6 +10,15 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+    .discover{
+        width: 100%;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // bottom: 0.49rem;
+        h1{
+            font-size: 0.2rem;
+        }
+    }
 </style>
