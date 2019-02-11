@@ -1,12 +1,18 @@
 <template>
     <div class="home" id="app">
-        <h1>首页</h1>
+        <home-header/>
+        <home-banner/>
     </div>
 </template>
 
 <script>
+import homeHeader from "../../components/home/homeHeader"
+import homeBanner from "../../components/home/homeBanner"
 export default {
-
+    components:{
+        homeHeader,
+        homeBanner
+    }
 }
 </script>
 
