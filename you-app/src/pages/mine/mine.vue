@@ -14,8 +14,7 @@
         <div class="content">
             <list v-for="item in listmsg" :key="item.title" :info=item></list>
         </div>
-    </div> 
-     
+    </div>  
 </template>
 
 <script>

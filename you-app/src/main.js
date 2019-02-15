@@ -11,6 +11,7 @@ import VueCookie from 'vue-cookie'
 Vue.config.productionTip = false
 Vue.use(common);
 Vue.use(VueCookie);
+Vue.prototype.$center = new Vue();
 new Vue({
     router,
     store,

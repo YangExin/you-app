@@ -5,7 +5,7 @@
             <div class="headerInner">
                 <i class="iconfont icon-sousuo"></i>
                 <h3>个人中心</h3>
-                <i class="iconfont icon-shangpingouwudai2"></i>
+                <i class="iconfont icon-shangpingouwudai2" @click="cart"></i>
             </div>
         </div>
         <div>
@@ -29,14 +29,19 @@ export default {
     data(){
         return{
             listmsg:[
-                {title:'订单',path:'/cart',index:1,fontClass:'iconfont icon-dingdan',right:'iconfont icon-iconfontjiantou4'},
+                {title:'订单',path:'/you/mine/cart',index:1,fontClass:'iconfont icon-dingdan',right:'iconfont icon-iconfontjiantou4'},
                 {title:'收藏',path:'/you/mine/collection',index:0,fontClass:'iconfont icon-aixin',right:'iconfont icon-iconfontjiantou4'},
-                {title:'订阅',path:'/mine/subscribe',index:2,fontClass:'iconfont icon-dingyue',right:'iconfont icon-iconfontjiantou4'},
-                {title:'设置',path:'/mine/install',index:3,fontClass:'iconfont icon-shezhi',right:'iconfont icon-iconfontjiantou4'},
-                {title:'客服',path:'/mine/service',index:3,fontClass:'iconfont icon-kefu',right:'iconfont icon-iconfontjiantou4'},
-                {title:'会员中心',path:'/mine/vip',index:3,fontClass:'iconfont icon-huiyuan',right:'iconfont icon-iconfontjiantou4'},
-                {title:'余额充值',path:'/mine/recharge',index:3,fontClass:'iconfont icon-chongzhi',right:'iconfont icon-iconfontjiantou4'},
+                {title:'订阅',path:'/you/mine/subscribe',index:2,fontClass:'iconfont icon-dingyue',right:'iconfont icon-iconfontjiantou4'},
+                {title:'设置',path:'/you/mine/install',index:3,fontClass:'iconfont icon-shezhi',right:'iconfont icon-iconfontjiantou4'},
+                {title:'客服',path:'/you/mine/service',index:3,fontClass:'iconfont icon-kefu',right:'iconfont icon-iconfontjiantou4'},
+                {title:'会员中心',path:'/you/mine/vip',index:3,fontClass:'iconfont icon-huiyuan',right:'iconfont icon-iconfontjiantou4'},
+                {title:'余额充值',path:'/you/mine/recharge',index:3,fontClass:'iconfont icon-chongzhi',right:'iconfont icon-iconfontjiantou4'},
             ]
+        }
+    },
+    methods:{
+        cart(){
+            this.$router.push('/you/mine/cartbag')
         }
     }
 }
