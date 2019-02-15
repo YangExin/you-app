@@ -1,50 +1,58 @@
 <template>
-    <div class="banner">
-        <Swiper ref="swiper" v-if="list.length > 0" :autoPlay='true' :showIndicator='true' interval="2500" duration="500">
-            <Slide @click="clickMe" v-for="(tag,key) in list" :key="key">
-                <img :src="tag.img" />
-            </Slide>
-        </Swiper>
-   </div>
+    <div class="swiper-wrap">
+        <div class="swiper">
+            <mt-swipe :auto="4000">
+                <mt-swipe-item class="swiper">
+                    <img src="/img/banner.jpg" alt="">
+                </mt-swipe-item>
+                <mt-swipe-item class="swiper">
+                    <img src="/img/banner1.jpg" alt="">
+                </mt-swipe-item>
+                <mt-swipe-item class="swiper">
+                    <img src="/img/banner3.jpg" alt="">
+                </mt-swipe-item>
+                <mt-swipe-item class="swiper">
+                    <img src="/img/banner4.jpg" alt="">
+                </mt-swipe-item>
+                <mt-swipe-item class="swiper">
+                    <img src="/img/banner5.jpg" alt="">
+                </mt-swipe-item>
+            </mt-swipe>
+        </div>
+    </div>
 </template>
 
 <script>
-import { Swiper, Slide } from 'vue-swiper-component';
+import Vue from 'vue'
+import { Swipe, SwipeItem } from 'mint-ui';
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
 export default {
-    data() {
-        return {
-            list: [
-                { img: '../../../public/img/banner.jfif' },
-                { img: '../../../public/img/banner1.jpg' },
-                { img: '../../../public/img/banner3.jpg' },
-                { img: '../../../public/img/banner4.jpg' },
-                { img: '../../../public/img/banner5.jpg' },
-            ]
-        }
-    },
-    components: {
-                Swiper,
-                Slide
-            },
-    methods: {
-        clickMe (index){
-                console.log(index)
-        },
-        preve(){
-            this.$refs.swiper.prevSlide();
-        },
-        next(){
-            this.$refs.swiper.nextSlide();
-        }         
-    }
-
 }
 </script>
 
-<style lang="scss" scoped>
-img {
-      width: 3.45rem;
-      height: 4.475rem;
-}
+<style <style lang="scss" scoped>
+    .swiper-wrap{
+        width: 100%;
+        height: 4.5rem;
+        padding: .16rem .15rem;
+        .swiper{
+            width: 3.45rem;
+            background-color: pink;
+            height: 4.475rem;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
 </style>
+// >
+//     .swiper{
+//         width: 100%;
+//         background-color: pink;
+//         height: 1.8rem;
+//     }
+// </style>
+
 
