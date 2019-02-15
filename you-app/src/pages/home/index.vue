@@ -1,12 +1,10 @@
 <template>
-    <div class="home" id="app">
-        <h1>首页</h1>
+    <div class="home">
     </div>
 </template>
 
 <script>
 export default {
-
 }
 </script>
 

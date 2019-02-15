@@ -3,6 +3,12 @@ const { mock, Random } = require('mockjs');
 const api = require('./api');
 const url = require('url');
 const User = require('./dbconfig/user');
+const Usercatelist = require('./dbconfig/usercatelist');
+const Catelist = require('./dbconfig/usercatelist2')
+const Usersubscribe = require('./dbconfig/usersubscribe');
+const Subscribe = require('./dbconfig/usersubscribe2');
+const Official = require('./dbconfig/official');
+const Address = require('./dbconfig/address');
 const { JSDOM } = require('jsdom');
 // const session = require('express-session');
 var app = express();
@@ -81,7 +87,82 @@ app.post(api.CHECKLOGINPHONE_URL, (req, res) => {
         })
 })
 
+app.post(api.USERCATELIST_URL, (req, res) => {
+    // console.log(req.body);
+    Usercatelist.find(req.body)
+        .then(data => {
+            // console.log(data);
+            res.json({
+                status: 0,
+                message: 'ok',
+                data
+            });
+        })
+})
 
+app.post(api.USERCATELIST2_URL, (req, res) => {
+    // console.log(req.body);
+    Catelist.find(req.body)
+        .then(data => {
+            // console.log(data);
+            res.json({
+                status: 0,
+                message: 'ok',
+                data
+            });
+        })
+})
+
+
+app.post(api.USERSUBSCRIBR_URL, (req, res) => {
+    // console.log(req.body);
+    Usersubscribe.find(req.body)
+        .then(data => {
+            res.json({
+                status: 0,
+                message: 'ok',
+                data
+            })
+        })
+})
+
+app.post(api.USERSUBSCRIBR_URL2, (req, res) => {
+    // console.log(req.body);
+    Subscribe.find(req.body)
+        .then(data => {
+            res.json({
+                status: 0,
+                message: 'ok',
+                data
+            })
+        })
+})
+
+
+app.get(api.OFFICIAL_URL,(req,res)=>{
+    Official.find({})
+    .then(data=>{
+        res.json({
+            status:0,
+            message:'ok',
+            data
+        })
+    })
+})
+
+app.post(api.USERADDRESS_URL,(req,res)=>{
+    // console.log(req.body)
+    Address.find(req.body)
+    .then(data=>{
+        // console.log(data);
+        
+        res.json({
+            status:0,
+            message:'ok',
+            data:data.result
+        })
+    })
+})
 
 app.listen('3333', 'localhost', (error) => {
     if (error) {

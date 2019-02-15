@@ -11,7 +11,6 @@
                 <i :class=info.right></i>
             </div>       
         </div>
-        
     </router-link>
 </template>
 

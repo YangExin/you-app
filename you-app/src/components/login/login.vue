@@ -57,7 +57,7 @@ export default {
                     let userId = data.data.id;
                     // console.log(userId);
                     this.$cookie.set('username',userId,1);
-                    this.$router.push('/home');
+                    this.$router.push('/you/home');
                 }else{
                     Toast({
                         message: '用户名或密码错误',
